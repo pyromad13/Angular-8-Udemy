@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
   allowNewServer = false;
+  showSecret = false;
   serverCreationStatus = 'No Server was created';
   serverName = '';
   serverCreated = false;
   servers =['TestServer','TestServer 2'];
+  logs = [];
   constructor() {
     setTimeout(( ) => {
       this.allowNewServer = true;
@@ -29,6 +31,14 @@ export class ServersComponent implements OnInit {
     console.log(event);
     this.serverName = (event.target as HTMLInputElement).value;
 
+  }
+  onToggleClick() {
+    this.showSecret = !this.showSecret;
+    //this.logs.push(this.logs.length + 1);
+    this.logs.push(new Date);
+    if(this.logs.length > 4){
+
+    }
   }
 }
 

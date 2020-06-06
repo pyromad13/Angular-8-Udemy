@@ -16,3 +16,17 @@
     </ng-template>
 <app-server *ngFor="let server of servers"></app-server>
 
+<hr>
+<!-- <button
+ class="btn btn-secondary" (click)='showSecret = !showSecret'>Display Details</button> -->
+ <button
+ class="btn btn-primary" (click)='onToggleClick()'>Display Details</button>
+<p *ngIf="showSecret">Secret Pasworrd = Tuna</p>
+<div
+
+ *ngFor="let log of logs; let i = index"
+ [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+ [ngClass]="{'white-text': i >= 4}"
+ >
+  {{log}}
+</div>
